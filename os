@@ -10,6 +10,7 @@ function BSOD(err)
 end
 
 local function init()
+    -- The main OS code
     local bootImg = paintutils.loadImage("/System/Images/boot")
     local desktopImg = paintutils.loadImage("/System/Images/desktop") 
     term.clear()
