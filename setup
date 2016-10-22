@@ -12,10 +12,49 @@ local files = {
         "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/Programs/LuaIDE/program"
    },
    [4] = {
-       "/Programs/Sketch/program"
+       "/Programs/Sketch/program",
        "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/Programs/Sketch/program"
-   }
-}        
+   },
+   [5] = {
+       "/Desktop/LuaIDE",
+       "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/Desktop/LuaIDE"
+  },
+  [6] = {
+      "/Desktop/Sketch",
+      "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/Desktop/Sketch"
+  },
+  [7] = {
+      "/System/Images/desktop",
+      "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/System/Images/desktop"
+ },
+ [8] = {
+     "/System/settings",
+     "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/System/settings"
+ },
+ [9] = {
+     "/System/autoupdater",
+     "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/System/autoupdater"
+ },
+ [10] = {
+      "/System/.version",
+      "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/System/.version"
+ },
+ [11] = {
+      "/os",
+      "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/os"
+ },
+ [12] = {
+      "/System/APIs/crasher",
+      "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/System/APIs/crasher"
+ },
+ [13] = {
+      "/System/APIs/sha256",
+      "https://raw.githubusercontent.com/Carbon-OS/CarbonOS/master/System/APIs/sha256"  
+ }    
+}
+if term.isColor() == false then
+   print("Sorry, But you need an Advanced PC to run this OS!")
+else
 term.setBackgroundColor(colors.gray)
 term.clear()
 term.setCursorPos(16,8)
@@ -36,7 +75,7 @@ if x >= 21 and x < 28 and y == 16 then
    local code
    local file
    for k,v in pairs(files) do
-       print("Downloading ", files, "...")
+       print("Downloading ", v[2], "...")
        req = http.get(v[2])
        if req ~= nil then
        code = req.readAll()
@@ -49,10 +88,14 @@ if x >= 21 and x < 28 and y == 16 then
    file.write(code)
    file.close()
 end
+file = fs.open("/System/.firstuse", "w")
+file.write("true")
+file.close()
 print("Done!")  
 print("Rebooting...")
 os.sleep(1)
 os.reboot()
    
+end
 end
 end
