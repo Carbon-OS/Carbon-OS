@@ -1,4 +1,4 @@
-function BSOD(err) 
+function BSOD(err) -- BSOD Error Handler
    term.setBackgroundColor(colors.blue)
    term.clear()
    term.setCursorPos(1,1)
