@@ -16,8 +16,10 @@ local function init()
     term.clear()
     paintutils.drawImage(bootImg, 1,1)
     local w, h = term.getSize()
+    local text = "Discontinued"
+    local nw = w - text
     term.setTextColor(colors.white)
-    term.setCursorPos(w-#"Discontinued, h)
+    term.setCursorPos(nw, y)
     write("Discontinued")
     os.sleep(2) 
     term.setBackgroundColor(colors.brown) 
