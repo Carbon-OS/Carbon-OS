@@ -6,3 +6,5 @@ To test it out type pastebin run 5BsVEnu3
 This OS does not auto-update yet but it will auto-update soon!
 
 [Visit Page](http://carbonos.tk/)
+
+**THIS OS IS DISCONTINUED AND WILL NO LONGER BE RECEVING ANY UPDATES**
